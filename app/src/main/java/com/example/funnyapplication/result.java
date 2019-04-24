@@ -39,6 +39,9 @@ public class result extends AppCompatActivity {
         setContentView(R.layout.activity_result);
 
         Intent intent = getIntent();
+        final String origin = intent.getStringExtra("From");
+        final String destination = intent.getStringExtra("To");
+        final String date = intent.getStringExtra("Date");
 
         Button start = findViewById(R.id.start);
         final TextView QuoteId = findViewById(R.id.QuoteId);
@@ -50,7 +53,7 @@ public class result extends AppCompatActivity {
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
-                startAPICall("US", "USD", "en-US", "SFO-sky", "JFK-sky", "2019-09-01", "2019-10-01");
+                startAPICall("US", "USD", "en-US", origin, destination, date, "2019-10-01");
                 QuoteId.setVisibility(View.VISIBLE);
                 MinPrice.setVisibility(View.VISIBLE);
                 CarrierId.setVisibility(View.VISIBLE);
@@ -65,8 +68,13 @@ public class result extends AppCompatActivity {
     }
 
 
-    void startAPICall(final String country, final String currency, final String locale, final String destinationplace, final String originplace, final String outboundpartialdate,final String inboundpartialdate) {
-        String url = "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsedates/v1.0/US/USD/en-US/SFO-sky/JFK-sky/2019-10-01?inboundpartialdate=2019-10-01";
+    void startAPICall(final String country, final String currency, final String locale, final String originplace, final String destinationplace, final String outboundpartialdate,final String inboundpartialdate) {
+        Intent intent = getIntent();
+        final String origin = intent.getStringExtra("From");
+        final String destination = intent.getStringExtra("To");
+        final String date = intent.getStringExtra("Date");
+        String url = "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsedates/v1.0/" + country + "/" + currency + "/" + locale + "/" + origin + "/" + destination + "/" + date + "?" + "inboundpartialdate=2019-10-01";
+        //String url = "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsedates/v1.0/{country}/{currency}/{locale}/{originplace}/{destinationplace}/{outboundpartialdate}";
 
         // Request a string response from the provided URL.
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,

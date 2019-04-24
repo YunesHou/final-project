@@ -3,31 +3,19 @@ package com.example.funnyapplication;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.app.Activity;
+import android.view.View;
+import android.widget.EditText;
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.HashMap;
-import java.util.Map;
-
-import unirest.HttpResponse;
-import unirest.JsonNode;
-import unirest.Unirest;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,42 +26,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Instantiate the RequestQueue.
-        //RequestQueue queue = Volley.newRequestQueue(this);
-        //String url = "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/UK/GBP/en-GB/?query=Stockholm";
 
-        // Request a string response from the provided URL.
-        //StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
-                //new Response.Listener<String>() {
-                    //@Override
-                    //public void onResponse(String response) {
-                        // Display the first 500 characters of the response string.
-                        //Log.d("Debug", response);
-                    //}
-                //}, new Response.ErrorListener() {
-            //@Override
-            //public void onErrorResponse(VolleyError error) {
-                //Log.d("Debug", error.toString());
-            //}
-        //}) {
-            //@Override
-            //public Map<String, String> getHeaders() throws AuthFailureError {
-                //Map<String, String> params = new HashMap<String, String>();
-                //params.put("X-RapidAPI-Host", "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com");
-                //params.put("X-RapidAPI-Key", "9b857f71d3msh9140ba791ab214ap16f3c1jsn74ae2d471f73");
-                //return params;
-            //}
-        //};
+        findViewById(R.id.start).setOnClickListener(v -> startSearch());
 
-        // Add the request to the RequestQueue.
-        //queue.add(stringRequest);
-
-        TextView from = findViewById(R.id.from);
-        TextView to = findViewById(R.id.to);
-        TextView date = findViewById(R.id.date);
-        Button start = findViewById(R.id.start);
-
-        //findViewById(R.id.start).setOnClickListener(v -> startSearch());
     }
     public void openActivity (View view){
         Intent intent = new Intent(this, result.class);
@@ -82,24 +37,6 @@ public class MainActivity extends AppCompatActivity {
 
     String getTextIn(final int editor) {
         return ((EditText) findViewById(editor)).getText().toString();
-    }
-
-    boolean validSetup() {
-        try {
-            String from = getTextIn(R.id.from);
-            String to = getTextIn(R.id.to);
-            String date = getTextIn(R.id.date);
-
-            /*
-             * We check for validity using the ConnectN factory constructor, which should return null if the combination
-             * of parameters is invalid.
-             */
-            //return ConnectN.create(from, to, date) != null;
-            return false;
-        } catch (Exception e) {
-            // This probably means we couldn't parse a text field as a number. Return false in that case.
-            return false;
-        }
     }
 
     void startSearch() {
@@ -121,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
          */
         intent.putExtra("From", getTextIn(R.id.fromcity));
         intent.putExtra("To", getTextIn(R.id.tocity));
-        intent.putExtra("Date", getTextIn(R.id.date));
+        intent.putExtra("Date", getTextIn(R.id.userdate));
 
         // Actually start the GameActivity Activity, causing that screen to launch.
         startActivity(intent);
