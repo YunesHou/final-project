@@ -39,41 +39,41 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Instantiate the RequestQueue.
-        RequestQueue queue = Volley.newRequestQueue(this);
-        String url = "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/UK/GBP/en-GB/?query=Stockholm";
+        //RequestQueue queue = Volley.newRequestQueue(this);
+        //String url = "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/UK/GBP/en-GB/?query=Stockholm";
 
         // Request a string response from the provided URL.
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
+        //StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                //new Response.Listener<String>() {
+                    //@Override
+                    //public void onResponse(String response) {
                         // Display the first 500 characters of the response string.
-                        Log.d("Debug", response);
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.d("Debug", error.toString());
-            }
-        }) {
-            @Override
-            public Map<String, String> getHeaders() throws AuthFailureError {
-                Map<String, String> params = new HashMap<String, String>();
-                params.put("X-RapidAPI-Host", "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com");
-                params.put("X-RapidAPI-Key", "9b857f71d3msh9140ba791ab214ap16f3c1jsn74ae2d471f73");
-                return params;
-            }
-        };
+                        //Log.d("Debug", response);
+                    //}
+                //}, new Response.ErrorListener() {
+            //@Override
+            //public void onErrorResponse(VolleyError error) {
+                //Log.d("Debug", error.toString());
+            //}
+        //}) {
+            //@Override
+            //public Map<String, String> getHeaders() throws AuthFailureError {
+                //Map<String, String> params = new HashMap<String, String>();
+                //params.put("X-RapidAPI-Host", "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com");
+                //params.put("X-RapidAPI-Key", "9b857f71d3msh9140ba791ab214ap16f3c1jsn74ae2d471f73");
+                //return params;
+            //}
+        //};
 
         // Add the request to the RequestQueue.
-        queue.add(stringRequest);
+        //queue.add(stringRequest);
 
         TextView from = findViewById(R.id.from);
         TextView to = findViewById(R.id.to);
         TextView date = findViewById(R.id.date);
         Button start = findViewById(R.id.start);
 
-        //findViewById(R.id.start).setOnClickListener(v -> flight());
+        //findViewById(R.id.start).setOnClickListener(v -> startSearch());
     }
     public void openActivity (View view){
         Intent intent = new Intent(this, result.class);

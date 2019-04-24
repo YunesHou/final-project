@@ -73,11 +73,11 @@ android:orientation="vertical" >
         style="@android:style/Widget.DeviceDefault.Light.Button.Inset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Start Search"
+        android:onClick="openActivity"
+        android:text="Next"
         android:textAllCaps="true"
         android:textColor="@color/colorPrimary"
         android:textSize="30sp"
-        android:textStyle="bold"
-        android:onClick="openActivity"/>
+        android:textStyle="bold" />
 
 </LinearLayout>
