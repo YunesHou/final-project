@@ -2,10 +2,12 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:gravity="center_horizontal"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/background1">
 
     <Button
         android:id="@+id/start"
@@ -17,7 +19,7 @@
         android:onClick="openActivity"
         android:text="FLIGHT FINDER"
         android:textColor="@color/colorPrimary"
-        android:textSize="18sp"
+        android:textSize="24sp"
         android:textStyle="bold" />
 
     <TextView
@@ -27,7 +29,9 @@
         android:fontFamily="casual"
         android:lineSpacingExtra="8sp"
         android:text="from:"
+        android:textAlignment="viewStart"
         android:textAllCaps="true"
+        android:textColor="@color/colorAccent"
         android:textSize="18sp"
         android:textStyle="bold" />
 
@@ -45,6 +49,7 @@
         android:lineSpacingExtra="8sp"
         android:text="to:"
         android:textAllCaps="true"
+        android:textColor="@color/colorAccent"
         android:textSize="18sp"
         android:textStyle="bold" />
 
@@ -62,6 +67,7 @@
         android:lineSpacingExtra="8sp"
         android:text="date:"
         android:textAllCaps="true"
+        android:textColor="@color/colorAccent"
         android:textSize="18sp"
         android:textStyle="bold" />
 
