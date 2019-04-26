@@ -37,28 +37,28 @@
     <TextView
         android:id="@+id/CarrierId"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="3dp"
         android:textSize="24sp"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/Name"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="51dp"
         android:textSize="24sp"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/CountryName"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="46dp"
         android:textSize="24sp"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
-        android:layout_height="122dp" />
+        android:layout_height="114dp" />
 
     <Button
         android:id="@+id/back"
@@ -66,14 +66,6 @@
         android:layout_height="89dp"
         android:layout_alignParentRight="@bool/left"
         android:layout_gravity="left"
-        android:layout_marginHorizontal="4dp"
-        android:layout_marginVertical="3dp"
-        android:layout_marginStart="3dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="3dp"
-        android:layout_marginRight="45dp"
-        android:layout_marginBottom="3dp"
         android:background="@android:drawable/ic_menu_revert" />
 
 
