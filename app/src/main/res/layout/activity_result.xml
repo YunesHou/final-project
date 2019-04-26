@@ -8,8 +8,14 @@
     android:layout_height="match_parent"
     android:background="@drawable/background1"
     android:gravity="center|center_horizontal"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:weightSum="1">
 
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="56dp" />
 
     <Button
         android:id="@+id/start"
@@ -20,53 +26,101 @@
         android:textSize="36sp"
         android:textStyle="bold" />
 
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="142dp"
+        android:orientation="vertical"
+        android:weightSum="100">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="30">
+
+            <TextView
+                android:id="@+id/Textview1111"
+                android:layout_width="191dp"
+                android:layout_height="22dp"
+                android:fontFamily="casual"
+                android:textAlignment="center"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:weightSum="30" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="37dp"
+            android:fontFamily="casual"
+            android:text="                   LAX"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:weightSum="83" />
+
+        <TextView
+            android:id="@+id/Textview1"
+            android:layout_width="192dp"
+            android:layout_height="74dp"
+            android:fontFamily="casual"
+            android:text=" ORD"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:weightSum="17" />
+
+    </LinearLayout>
+
     <TextView
         android:id="@+id/QuoteId"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:textSize="24sp"
+        android:layout_height="55dp"
+        android:textAlignment="center"
+        android:textSize="30sp"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/MinPrice"
         android:layout_width="match_parent"
         android:layout_height="53dp"
-        android:textSize="24sp"
+        android:textAlignment="center"
+        android:textSize="30sp"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/CarrierId"
         android:layout_width="match_parent"
-        android:layout_height="3dp"
-        android:textSize="24sp"
+        android:layout_height="58dp"
+        android:textAlignment="center"
+        android:textSize="30sp"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/Name"
         android:layout_width="match_parent"
-        android:layout_height="51dp"
-        android:textSize="24sp"
+        android:layout_height="56dp"
+        android:textAlignment="center"
+        android:textSize="30sp"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/CountryName"
         android:layout_width="match_parent"
-        android:layout_height="46dp"
+        android:layout_height="67dp"
+        android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="114dp" />
 
     <Button
         android:id="@+id/back"
         android:layout_width="69dp"
-        android:layout_height="89dp"
+        android:layout_height="71dp"
         android:layout_alignParentRight="@bool/left"
         android:layout_gravity="left"
-        android:background="@android:drawable/ic_menu_revert" />
+        android:background="@android:drawable/ic_menu_revert"
+        android:paddingLeft="0dp"
+        android:paddingBottom="10dp" />
 
 
 </LinearLayout>
