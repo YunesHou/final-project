@@ -6,8 +6,9 @@
     android:id="@+id/LinearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:accessibilityHeading="false"
     android:background="@drawable/background1"
-    android:gravity="center|center_horizontal"
+    android:gravity="center_horizontal"
     android:orientation="vertical"
     android:weightSum="1">
 
@@ -28,7 +29,7 @@
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="142dp"
+        android:layout_height="114dp"
         android:orientation="vertical"
         android:weightSum="100">
 
@@ -40,7 +41,7 @@
             <TextView
                 android:id="@+id/Textview1111"
                 android:layout_width="191dp"
-                android:layout_height="27dp"
+                android:layout_height="8dp"
                 android:fontFamily="casual"
                 android:textAlignment="center"
                 android:textSize="30sp"
@@ -49,22 +50,20 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/destination"
             android:layout_width="match_parent"
-            android:layout_height="39dp"
+            android:layout_height="43dp"
             android:fontFamily="casual"
-            android:text="                  LAX"
             android:textAlignment="center"
             android:textSize="30sp"
             android:textStyle="bold"
             android:weightSum="83" />
 
         <TextView
-            android:id="@+id/Textview1"
+            android:id="@+id/departure"
             android:layout_width="192dp"
-            android:layout_height="74dp"
+            android:layout_height="wrap_content"
             android:fontFamily="casual"
-            android:text=" ORD"
             android:textAlignment="center"
             android:textSize="30sp"
             android:textStyle="bold"
@@ -76,6 +75,7 @@
         android:id="@+id/QuoteId"
         android:layout_width="match_parent"
         android:layout_height="55dp"
+        android:fontFamily="casual"
         android:textAlignment="center"
         android:textSize="30sp"
         android:textStyle="bold" />
@@ -84,6 +84,7 @@
         android:id="@+id/MinPrice"
         android:layout_width="match_parent"
         android:layout_height="53dp"
+        android:fontFamily="casual"
         android:textAlignment="center"
         android:textSize="30sp"
         android:textStyle="bold" />
@@ -92,6 +93,7 @@
         android:id="@+id/CarrierId"
         android:layout_width="match_parent"
         android:layout_height="58dp"
+        android:fontFamily="casual"
         android:textAlignment="center"
         android:textSize="30sp"
         android:textStyle="bold" />
@@ -100,27 +102,21 @@
         android:id="@+id/Name"
         android:layout_width="match_parent"
         android:layout_height="56dp"
+        android:fontFamily="casual"
         android:textAlignment="center"
         android:textSize="30sp"
         android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/CountryName"
-        android:layout_width="match_parent"
-        android:layout_height="67dp"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        android:textStyle="bold" />
 
     <Button
         android:id="@+id/back"
-        android:layout_width="69dp"
-        android:layout_height="71dp"
+        android:layout_width="76dp"
+        android:layout_height="84dp"
         android:layout_alignParentRight="@bool/left"
-        android:layout_gravity="left"
+        android:layout_gravity="center_horizontal"
         android:background="@android:drawable/ic_menu_revert"
-        android:paddingLeft="0dp"
-        android:paddingBottom="10dp" />
+        android:paddingLeft="150dp"
+        android:paddingBottom="100dp" />
 
 
 </LinearLayout>

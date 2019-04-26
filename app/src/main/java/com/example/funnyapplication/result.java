@@ -39,8 +39,8 @@ public class result extends AppCompatActivity {
         setContentView(R.layout.activity_result);
 
         Intent intent = getIntent();
-        final String origin = intent.getStringExtra("From");
-        final String destination = intent.getStringExtra("To");
+        final String origin = intent.getStringExtra("From" + "-sky");
+        final String destination = intent.getStringExtra("To" + "-sky");
         final String date = intent.getStringExtra("Date");
 
         Button start = findViewById(R.id.start);
@@ -48,7 +48,12 @@ public class result extends AppCompatActivity {
         final TextView MinPrice = findViewById(R.id.MinPrice);
         final TextView CarrierId = findViewById(R.id.CarrierId);
         final TextView Name = findViewById(R.id.Name);
-        final TextView CountryName = findViewById(R.id.CountryName);
+        //final TextView CountryName = findViewById(R.id.CountryName);
+        final TextView departure = findViewById(R.id.departure);
+        final TextView destinationText = findViewById(R.id.destination);
+
+        departure.setText(intent.getStringExtra("From"));
+        destinationText.setText("                  " + intent.getStringExtra("To"));
 
         start.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,7 +63,7 @@ public class result extends AppCompatActivity {
                 MinPrice.setVisibility(View.VISIBLE);
                 CarrierId.setVisibility(View.VISIBLE);
                 Name.setVisibility(View.VISIBLE);
-                CountryName.setVisibility(View.VISIBLE);
+                //CountryName.setVisibility(View.VISIBLE);
             }
         });
 
@@ -112,7 +117,7 @@ public class result extends AppCompatActivity {
             TextView MinPriceText = findViewById(R.id.MinPrice);
             TextView CarrierIdText = findViewById(R.id.CarrierId);
             TextView NameText = findViewById(R.id.Name);
-            TextView CountryNameText = findViewById(R.id.CountryName);
+            //TextView CountryNameText = findViewById(R.id.CountryName);
 
 
             JsonParser parser = new JsonParser();
