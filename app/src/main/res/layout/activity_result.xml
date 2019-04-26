@@ -4,8 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/LinearLayout"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="@drawable/background1"
     android:gravity="center|center_horizontal"
     android:orientation="vertical">
@@ -23,14 +23,14 @@
     <TextView
         android:id="@+id/QuoteId"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="56dp"
         android:textSize="24sp"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/MinPrice"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="53dp"
         android:textSize="24sp"
         android:textStyle="bold" />
 
@@ -55,11 +55,17 @@
         android:textSize="24sp"
         android:textStyle="bold" />
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="122dp" />
+
     <Button
         android:id="@+id/back"
-        android:layout_width="wrap_content"
-        android:layout_height="80dp"
+        android:layout_width="69dp"
+        android:layout_height="89dp"
         android:layout_alignParentRight="@bool/left"
+        android:layout_gravity="left"
         android:layout_marginHorizontal="4dp"
         android:layout_marginVertical="3dp"
         android:layout_marginStart="3dp"
@@ -68,8 +74,7 @@
         android:layout_marginEnd="3dp"
         android:layout_marginRight="45dp"
         android:layout_marginBottom="3dp"
-        android:background="@android:drawable/ic_menu_revert"
-        android:textAlignment="viewStart" />
+        android:background="@android:drawable/ic_menu_revert" />
 
 
 </LinearLayout>
