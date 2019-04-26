@@ -61,6 +61,12 @@ public class result extends AppCompatActivity {
                 CountryName.setVisibility(View.VISIBLE);
             }
         });
+
+        findViewById(R.id.back).setOnClickListener(v -> {
+            Intent setupIntent = new Intent(this, MainActivity.class);
+            startActivity(setupIntent);
+            finish();
+        });
     }
 
     protected void onPause() {
@@ -122,6 +128,7 @@ public class result extends AppCompatActivity {
                 flightQuotes.add(QuoteId);
                 flightQuotes.add(MinPrice);
             }
+            System.out.println(flightQuotes);
             QuoteIdText.setText("Quote ID: "+ flightQuotes.get(0));
             MinPriceText.setText("MinPrice: "+ flightQuotes.get(1));
 

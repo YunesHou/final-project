@@ -5,19 +5,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.CalendarView.OnDateChangeListener;
+import android.widget.CalendarView;
 
 
 public class MainActivity extends AppCompatActivity {
+
+    private CalendarView calendarView;
 
     private static final String TAG = "FunnyApplication:Main";
 
@@ -26,6 +20,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        calendarView = findViewById(R.id.calendarView);
+
+        EditText date = findViewById(R.id.userdate);
+
+        calendarView.setOnDateChangeListener(new OnDateChangeListener() {
+
+            public void onSelectedDayChange(CalendarView view, int year, int month,
+                                            int dayOfMonth) {
+                String yearString = Integer.toString(year);
+                String monthString = Integer.toString(month + 1);
+                String dayString = Integer.toString(dayOfMonth);
+                date.setText(yearString + "-" + monthString + "-" + dayString);
+            }
+        });
 
         findViewById(R.id.start).setOnClickListener(v -> startSearch());
 
